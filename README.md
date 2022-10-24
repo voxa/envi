@@ -6,6 +6,60 @@ Replace your `.env` file with an easier to read `config.json`.
 
 The `@voxasoftworks/envi` command will load `config.json` from the current working directory, and output a `.env` file in the same directory.
 
+`envi` converts
+
+```json
+{
+  "SERVICE_A": {
+    "API": {
+      "API_TOKEN": "1234567890",
+      "API_ENDPOINT": "https://api-a.example.com",
+      "VERSION": "v2"
+    }
+  },
+  "SERVICE_B": {
+    "API": {
+      "TOKEN": "0987654321",
+      "ENDPOINT": "https://api-b.example.com",
+      "VERSION": "v1"
+    }
+  },
+  "WEBSITE": {
+    "API": {
+      "CONSUMER_KEY": "1234567890",
+      "CONSUMER_SECRET": "0987654321",
+      "API_ENDPOINT": "https://api-website.example.com",
+      "API_VERSION": "v1"
+    },
+    "EMAIL": {
+      "HOST": "smtp.example.com",
+      "PORT": "587",
+      "USERNAME": "hello@example.com",
+      "PASSWORD": "example"
+    }
+  }
+}
+```
+
+into this...
+
+```env
+SERVICE_A_API_API_TOKEN="1234567890"
+SERVICE_A_API_API_ENDPOINT="https://api-a.example.com"
+SERVICE_A_API_VERSION="v2"
+SERVICE_B_API_TOKEN="0987654321"
+SERVICE_B_API_ENDPOINT="https://api-b.example.com"
+SERVICE_B_API_VERSION="v1"
+WEBSITE_API_CONSUMER_KEY="1234567890"
+WEBSITE_API_CONSUMER_SECRET="0987654321"
+WEBSITE_API_API_ENDPOINT="https://api-website.example.com"
+WEBSITE_API_API_VERSION="v1"
+WEBSITE_EMAIL_HOST="smtp.example.com"
+WEBSITE_EMAIL_PORT="587"
+WEBSITE_EMAIL_USERNAME="hello@example.com"
+WEBSITE_EMAIL_PASSWORD="example"
+```
+
 ## Installation
 
 ```bash
@@ -39,4 +93,5 @@ Using the `--configExample` and `--envExample` flags, you can generate example c
 
 ```bash
 @voxasoftworks/envi --configExample ./config.example.json
+@voxasoftworks/envi --envExample ./config.example.json
 ```
