@@ -55,7 +55,7 @@ const flags: Record<
 
     try {
       const outputPath = resolve(cwd(), envOutput as string);
-      await writeFile(outputPath, environment);
+      await writeFile(outputPath, environment + '\n');
     } catch (error) {
       return Promise.reject(
         new Error(
@@ -100,7 +100,7 @@ const flags: Record<
               cwd(),
               inputFlags.envExample as string
             );
-            await writeFile(envExamplePath, exampleEnvironment);
+            await writeFile(envExamplePath, exampleEnvironment + '\n');
           } catch (error) {
             return Promise.reject(
               new Error(
