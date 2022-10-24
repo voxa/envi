@@ -35,12 +35,12 @@
     "node": ">=14.16"
   },
   "dependencies": {
-    "@types/node": "^18.11.4",
     "cli-meow-help": "^3.1.0",
     "meow": "^11.0.0"
   },
   "devDependencies": {
     "@ava/typescript": "^3.0.1",
+    "@types/node": "^18.11.4",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "ava": "^5.0.1",
