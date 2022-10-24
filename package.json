@@ -35,6 +35,7 @@
     "node": ">=14.16"
   },
   "dependencies": {
+    "@types/node": "^18.11.4",
     "cli-meow-help": "^3.1.0",
     "meow": "^11.0.0"
   },
@@ -73,11 +74,6 @@
         "src/": "build/"
       },
       "compile": false
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
     }
   },
   "prettier": {
