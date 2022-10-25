@@ -62,29 +62,44 @@ WEBSITE_EMAIL_PASSWORD="example"
 
 ## Installation
 
+When installing to a project, simply use `yarn` or `npm`.
+
 ```bash
 yarn add -D @voxasoftworks/envi
 ```
 
+or 
+
+```bash
+npm install --save-dev @voxasoftworks/envi
+```
+
+You can also use `npx` to execute the package immediately.
+
+```bash
+npx @voxasoftworks/envi
+```
+
 ## Usage
 
-By default, the command will load `config.json` from the current working directory, and output a `.env` file in the same directory.
+In your `package.json`, simply add `envi` to get started.
 
 ```json
-// In package.json...
 {
     "scripts": {
-        "config": "@voxasoftworks/envi"
+        "setenv": "envi"
     }
 }
 ```
+
+By default, the command will load `config.json` from the current working directory, and output a `.env` file in the same directory.
 
 ### Generating an environment file
 
 Using the `--configInput` and `--envOutput`, you can specify the path to the configuration file and the path to the environment file.
 
 ```bash
-@voxasoftworks/envi generate --config ./env.json --output ./env/.env
+npx @voxasoftworks/envi generate --config ./env.json --output ./env/.env
 ```
 
 ### Generating example files
@@ -92,6 +107,6 @@ Using the `--configInput` and `--envOutput`, you can specify the path to the con
 Using the `--configExample` and `--envExample` flags, you can generate example configuration and environment files.
 
 ```bash
-@voxasoftworks/envi --configExample ./config.example.json
-@voxasoftworks/envi --envExample ./config.example.json
+npx @voxasoftworks/envi --configExample ./config.example.json
+npx @voxasoftworks/envi --envExample ./config.example.json
 ```
